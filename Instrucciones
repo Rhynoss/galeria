@@ -1,0 +1,128 @@
+Instrucciones Ejercicio Capitulo 18 (2 partes)
+
+Aplicación "Flask".
+
+2. Segunda Parte:
+  Pasos a seguir:
+    1- Deberá hacer que cada imagen de fondo de la galería sea un 
+        enlace para cargar el recurso "/form_email" el cual debe 
+        recibir el campo "_id" del documento donde se ha hecho clic.
+       Por lo tanto, deberá indicarlo al formar el enlace al recurso
+        y abrir la plantilla "form_email" recibiendo dicho "id", el 
+        nombre del fondo, el título y la descripción, para mostrar 
+        de forma única el donfo seleccionado más un formulario donde
+        el usuario podeá escribir su email para recibirlo(pag.226).
+    2- El boton "ENVIAR EMAIL" cargará el recurso "/email", el cual
+        enviará la página "email.html" como cuerpo del email y el
+        archivo del fondo, como archivo adjunto.
+       Esta página debe recibir el 'título' y la 'descripción' para
+        que formen parte del propio mensaje, tal y como puede
+        comprobar si examina su código.
+    #  Como ya indicamos en el cápitulo anterior, dependiendo del
+        gestor de correo variará la presentación del email, y la
+        forma de mostrar el archivo adjunto.
+    3- Debe indicar sus datos de correo electrónico y gestor de
+        mensajes igual que hemos realizado en el ejercicio de este
+        capítulo.
+
+Liiiisto:
+
+1. Primera Parte:
+  Intro:
+    Página que mostrará un catálogo de fotografías que se pueden
+      usar como fondo de pantalla, este catálogo estará
+      gestionado a través de una base de datos "MongoDB".
+    Existirá una página encargada de, mediante un formulario,
+      permitir añadir nuevos fondos.
+    Para cada fondo, además de la fotografía habrá que indicar
+      algunos datos adicionales.
+
+  Instrucciones:
+    1- Requiere un servidor "MongoDB" en el cual se creará una
+        base de datos y una colección donde cada fondo de
+        pantalla se anotará como un documento formado por
+          - Título del fondo
+          - Descripción
+          - Fondo (el nombre del archivo)
+          - Tags
+    2- Que será una lista formada por cualquiera de los
+        siguientes temas
+          - Animales
+          - Naturaleza
+          - Ciudad
+          - Deporte
+          - Personas
+    3- Un fondo puede pertenecer a más de un tema.
+    4- Plantilla 'index.html' forma un menú similar a la imagén
+        (pag.223), en él se puede seleccionar los fondos por
+        diferentes temas.
+    5- TODOS sería para mostrar todos los fondos, luego los
+        temas, y al final la opción 'APORTAR' para lanzar un
+        recurso que abre la plantilla 'aportar.html' que es
+        un formulario para agregar nuevo fondo a la colección.
+
+  Pasos a seguir:
+    1- Iniciar servidor "mongoDB"
+    2- Crear programa "Python" que lance el servidor "Flask" y
+        abra la plantilla "index.html" mediante el recurso "/".
+       Si no existe ningún elemento en la colección, se muestra
+        un mensaje advirtiéndolo.
+    3- Prepare el recurso para la opción 'APORTAR', puede ver
+        en la plantilla que ejecuta el recurso "/aportar" el
+        cual debe abrir la plantilla "aportar.html" que
+        mostramos (pag. 224).
+    4- Botón 'AGREGAR FONDO' ejecuta el recurso '/insertar' y el 
+        botón 'CANCELAR'(volver a la galería) ejecuta el recurso "/".
+       Cada elemento del formulario tiene asignado un nombre, que
+        deberá recuperar en el recurso '/insertar' para realizar
+        el alta del documento en la base de datos.
+    5- Se debe indicar un archivo, y además sea un archivo de imágen.
+       Esto deberá comprobarlo en el recurso, si no se cumple, deberá
+        abrir nuevamente la plantilla 'aportar.html' pero indicando
+        en una variable '{ mensaje }' el mensaje apropiado al problema
+        (pag 224).
+        """
+        Si el archivo de imágen es válido, se guarda en carpeta
+          'fondos' dentro de 'static', su nombre será el que forme
+          parte del documento.
+        Cada elemento 'tag' seleccionado deberá formar de una lista
+          que es la que asignará al documento de fondo que estemos
+          aportando.
+        """
+    6- La misma función del recurso "/" debe utilizar para el
+        recurso "/galeria" el cual recibirá una variable 'tema'
+        con el tema o tag seleccionado por el usuario en el menú
+        de la página principal, tal y como puede comprobar si
+        examina el código de dicho menú.
+       En esta función, deberá localizar '(find)' los documentos
+        que contengan el tema en cuestión en su lista de temas,
+        y pasarlos como parámetro a la plantilla 'index.html'.
+    7- Para que el menú quede marcado el tema que se haya
+        seleccionado, cree un diccionario llamado 'estilos' en
+        el cual el tema escogido sea un elemento añadido al
+        mismo, con el valor "active", para que así, como puede
+        comprobar en 'index.html', enviando este diccionario en
+        un parámetro 'activo', establecerá la clase sólo el
+        único elemento de diccionario existente.
+    8- Al formar la galería con los fondos correspondientes,
+        deberá cargar la imágen, mostrar 'título', 'descripción',
+        y mediante un "bucle" incluir todos los tags o temas de
+        cada fondo.
+       Cada uno de ellos deberá ser un enlace al recurso '/galeria'
+        enviando una variable "tema" con el tema en cuestion, así 
+        cada tag funcionará igual que los elementos del menú
+        superior.
+      """
+        En la carpeta "Materiales ejercicios/Fotos" dispone de los
+          fondos.
+        En la planilla formamos la galería mediante elementos "card"
+          de "Bootstrap", para hacerlo más facil le indicamos en el
+          propio archivo el código Python que falta y cómo deben
+          llamarse los elementos empleados.
+      """
+
+// Fin Primera Parte //
+
+2. Segunda Parte:
+
+// Fin Segunda Parte //
