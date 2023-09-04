@@ -5,6 +5,11 @@ from pymongo import MongoClient
 from werkzeug.utils import secure_filename
 from flask_mail import Mail, Message
 
+def comprueba_fondo():
+	pass
+
+DOCUMENTOS = ["doc", "docx"]
+
 EXTENSIONES = ["png", "jpg", "jpeg"]
 app = Flask(__name__)
 upload_folder = os.path.abspath(os.path.join(app.root_path, "static", "fondos"))
